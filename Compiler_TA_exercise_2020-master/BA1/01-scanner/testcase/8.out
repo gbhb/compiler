@@ -1,0 +1,12 @@
+RBR )
+STRLIT "ROCK"
+LBR (
+LBR (
+STRLIT "apple"
+DOT .
+LBR (
+ID banana
+RBR )
+STRLIT "cat"
+RBR )
+SEMICOLON ;

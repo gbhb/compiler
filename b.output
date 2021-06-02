@@ -1,0 +1,244 @@
+狀態 16 衝突：1 項偏移/縮減
+
+
+文法
+
+    0 $accept: program $end
+
+    1 program: lines
+
+    2 lines: lines line
+    3      | line
+
+    4 line: expr '\n'
+    5     | expr
+    6     | '\n'
+
+    7 expr: LOAD INTEGER
+    8     | ADD
+    9     | SUB
+   10     | MUL
+   11     | MOD
+   12     | INC
+   13     | DEC
+   14     | DELETE
+   15     | COPY
+   16     | SWITCH
+   17     | DIV
+
+
+終結語詞，附有它們出現處的規則
+
+$end (0) 0
+'\n' (10) 4 6
+error (256)
+INTEGER (258) 7
+ADD (259) 8
+SUB (260) 9
+MUL (261) 10
+MOD (262) 11
+DIV (263) 17
+INC (264) 12
+DEC (265) 13
+DELETE (266) 14
+SWITCH (267) 16
+COPY (268) 15
+LOAD (269) 7
+
+
+非終結語詞，附有它們出現處的規則
+
+$accept (16)
+    於左側： 0
+program (17)
+    於左側： 1, 於右側： 0
+lines (18)
+    於左側： 2 3, 於右側： 1 2
+line (19)
+    於左側： 4 5 6, 於右側： 2 3
+expr (20)
+    於左側： 7 8 9 10 11 12 13 14 15 16 17, 於右側： 4 5
+
+
+狀態 0
+
+    0 $accept: . program $end
+
+    ADD     偏移，並進入狀態 1
+    SUB     偏移，並進入狀態 2
+    MUL     偏移，並進入狀態 3
+    MOD     偏移，並進入狀態 4
+    DIV     偏移，並進入狀態 5
+    INC     偏移，並進入狀態 6
+    DEC     偏移，並進入狀態 7
+    DELETE  偏移，並進入狀態 8
+    SWITCH  偏移，並進入狀態 9
+    COPY    偏移，並進入狀態 10
+    LOAD    偏移，並進入狀態 11
+    '\n'    偏移，並進入狀態 12
+
+    program  進入狀態 13
+    lines    進入狀態 14
+    line     進入狀態 15
+    expr     進入狀態 16
+
+
+狀態 1
+
+    8 expr: ADD .
+
+    $預設  使用規則 8 以縮減 (expr)
+
+
+狀態 2
+
+    9 expr: SUB .
+
+    $預設  使用規則 9 以縮減 (expr)
+
+
+狀態 3
+
+   10 expr: MUL .
+
+    $預設  使用規則 10 以縮減 (expr)
+
+
+狀態 4
+
+   11 expr: MOD .
+
+    $預設  使用規則 11 以縮減 (expr)
+
+
+狀態 5
+
+   17 expr: DIV .
+
+    $預設  使用規則 17 以縮減 (expr)
+
+
+狀態 6
+
+   12 expr: INC .
+
+    $預設  使用規則 12 以縮減 (expr)
+
+
+狀態 7
+
+   13 expr: DEC .
+
+    $預設  使用規則 13 以縮減 (expr)
+
+
+狀態 8
+
+   14 expr: DELETE .
+
+    $預設  使用規則 14 以縮減 (expr)
+
+
+狀態 9
+
+   16 expr: SWITCH .
+
+    $預設  使用規則 16 以縮減 (expr)
+
+
+狀態 10
+
+   15 expr: COPY .
+
+    $預設  使用規則 15 以縮減 (expr)
+
+
+狀態 11
+
+    7 expr: LOAD . INTEGER
+
+    INTEGER  偏移，並進入狀態 17
+
+
+狀態 12
+
+    6 line: '\n' .
+
+    $預設  使用規則 6 以縮減 (line)
+
+
+狀態 13
+
+    0 $accept: program . $end
+
+    $end  偏移，並進入狀態 18
+
+
+狀態 14
+
+    1 program: lines .
+    2 lines: lines . line
+
+    ADD     偏移，並進入狀態 1
+    SUB     偏移，並進入狀態 2
+    MUL     偏移，並進入狀態 3
+    MOD     偏移，並進入狀態 4
+    DIV     偏移，並進入狀態 5
+    INC     偏移，並進入狀態 6
+    DEC     偏移，並進入狀態 7
+    DELETE  偏移，並進入狀態 8
+    SWITCH  偏移，並進入狀態 9
+    COPY    偏移，並進入狀態 10
+    LOAD    偏移，並進入狀態 11
+    '\n'    偏移，並進入狀態 12
+
+    $預設  使用規則 1 以縮減 (program)
+
+    line  進入狀態 19
+    expr  進入狀態 16
+
+
+狀態 15
+
+    3 lines: line .
+
+    $預設  使用規則 3 以縮減 (lines)
+
+
+狀態 16
+
+    4 line: expr . '\n'
+    5     | expr .
+
+    '\n'  偏移，並進入狀態 20
+
+    '\n'     [使用規則 5 以縮減 (line)]
+    $預設  使用規則 5 以縮減 (line)
+
+
+狀態 17
+
+    7 expr: LOAD INTEGER .
+
+    $預設  使用規則 7 以縮減 (expr)
+
+
+狀態 18
+
+    0 $accept: program $end .
+
+    $預設  接受
+
+
+狀態 19
+
+    2 lines: lines line .
+
+    $預設  使用規則 2 以縮減 (lines)
+
+
+狀態 20
+
+    4 line: expr '\n' .
+
+    $預設  使用規則 4 以縮減 (line)

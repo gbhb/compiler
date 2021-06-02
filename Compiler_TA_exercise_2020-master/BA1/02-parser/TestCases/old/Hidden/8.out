@@ -1,0 +1,12 @@
+ID printf
+LBR (
+STRLIT "abc_123"
+RBR )
+SEMICOLON ;
+ID Str
+DOT .
+ID length
+LBR (
+STRLIT ""
+RBR )
+SEMICOLON ;

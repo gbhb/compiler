@@ -1,0 +1,5 @@
+ID p
+LBR (
+STRLIT ".."
+RBR )
+ID q

@@ -1,0 +1,8 @@
+
+ex1
+lex.yy.c 
+y.tab.h
+ex1.c
+lex.yy.o
+y.tab.c 
+y.tab.o

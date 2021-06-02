@@ -1,0 +1,4 @@
+(define x 5)
+(define y 4)
+(define foo (fun (x y) (+ x y 1)))
+(print-num (foo x 3))

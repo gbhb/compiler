@@ -1,0 +1,13 @@
+ID SysTem
+DOT .
+LBR (
+RBR )
+DOT .
+ID oUt
+DOT .
+ID printLN
+LBR (
+STRLIT "HelloWorld030"
+RBR )
+SEMICOLON ;
+SEMICOLON ;

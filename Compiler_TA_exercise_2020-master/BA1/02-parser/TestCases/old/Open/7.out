@@ -1,0 +1,4 @@
+STRLIT "test_string"
+SEMICOLON ;
+ID Test_ID
+SEMICOLON ;
